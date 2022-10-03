@@ -26,3 +26,4 @@ jobs:
           touch .env
           echo ${{ secrets.STAGING_ENV_BE }} >> .env
           cat .env
+          echo "$(<.env)"
