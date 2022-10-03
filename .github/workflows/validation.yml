@@ -1,0 +1,17 @@
+name: Server PR Validation
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  pr_validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+          touch .env
+          echo ${{ secrets.STAGING_ENV_BE }} >> .env
+          cat .env
