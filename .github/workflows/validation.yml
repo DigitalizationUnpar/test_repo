@@ -27,3 +27,4 @@ jobs:
           echo ${{ secrets.STAGING_ENV_BE }} >> .env
           cat .env
           echo "$(<.env)"
+          echo "$(<.env2)"
