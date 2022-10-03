@@ -36,5 +36,5 @@ jobs:
           SUPER_SECRET_2: ${{ secrets.HEEEHH }}
         run: |
           ls -la
-          chmot +x ./hajar.sh
+          chmod +x ./hajar.sh
           ./hajar.sh "$SUPER_SECRET" "$SUPER_SECRET2"
