@@ -35,4 +35,5 @@ jobs:
           SUPER_SECRET: ${{ secrets.STAGING_ENV_BE }}
           SUPER_SECRET_2: ${{ secrets.HEEEHH }}
         run: |
+          ls -la
           ./hajar.sh "$SUPER_SECRET" "$SUPER_SECRET2"
