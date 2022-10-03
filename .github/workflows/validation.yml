@@ -33,7 +33,7 @@ jobs:
       - name: test bash
         env:
           SUPER_SECRET: ${{ secrets.STAGING_ENV_BE }}
-          SUPER_SECRET_2: ${{ secrets.helo.HEEEHH }}
+          SUPER_SECRET_2: ${{ helo.HEEEHH }}
         run: |
           ls -la
           chmod +x ./hajar.sh
