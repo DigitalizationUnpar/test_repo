@@ -3,7 +3,7 @@ name: Server PR Validation
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  pull_request:
+  push:
     branches: [ "dev" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -25,7 +25,14 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           touch .env
-          echo ${{ secrets.STAGING_ENV_BE }} >> .env
+          echo DEBUGMODE=${{ secrets.STAGING_ENV_BE }} >> .env
           cat .env
           echo "$(<.env)"
           echo "$(<.env2)"
+
+      - name: test bash
+        env:
+          SUPER_SECRET: ${{ secrets.STAGING_ENV_BE }}
+          SUPER_SECRET_2: ${{ secrets.HEEEHH }}
+        run: |
+          ./hajar.sh "$SUPER_SECRET" "$SUPER_SECRET2"
