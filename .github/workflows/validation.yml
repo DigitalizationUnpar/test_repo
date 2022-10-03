@@ -25,7 +25,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           touch .env
-          echo ${{ secrets.STAGING_ENV_BE }} >> .env
+          echo DEBUGMODE=${{ secrets.STAGING_ENV_BE }} >> .env
           cat .env
           echo "$(<.env)"
           echo "$(<.env2)"
